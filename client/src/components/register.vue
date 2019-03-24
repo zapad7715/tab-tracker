@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import AuthenticationService from '../services/authentication-service'
 export default {
   data () {
     return {
@@ -31,8 +32,12 @@ export default {
     }
   },
   methods: {
-    register () {
-      console.log('register button was clicked')
+    async register () {
+      const response = await AuthenticationService.register({
+        email: this.email,
+        password: this.password
+      })
+      console.log(response.data)
     }
   }
 }
