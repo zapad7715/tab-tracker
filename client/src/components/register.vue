@@ -10,11 +10,12 @@
     <input
       type="password"
       name="password"
-      v-email="password"
+      v-model="password"
       placeholder="password"
     />
     <button
       type="submit"
+      @click="register"
     >
       Register
     </button>
@@ -29,9 +30,9 @@ export default {
       password: ''
     }
   },
-  watch: {
-    email (value) {
-      console.log('Email was changed', value)
+  methods: {
+    register () {
+      console.log('register button was clicked')
     }
   }
 }
