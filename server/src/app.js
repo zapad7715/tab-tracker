@@ -16,7 +16,13 @@ app.use(cors());
 
 app.get('/status', (req, res) => { 
   res.send({
-    message: 'hello world'
+    message: 'Server its worked!'
+  });
+});
+
+app.post('/register', (req, res) => { 
+  res.send({
+    message: `hello ${req.body.email}! You was registered!`
   });
 });
 
